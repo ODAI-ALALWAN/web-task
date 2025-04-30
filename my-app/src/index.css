@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@layer base {
+    :root {
+      --color-bg: #ffffff; /* white */
+      --color-text: #1f2937; /* gray-800 */
+      --color-border: #e5e7eb; /* gray-200 */
+      --color-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+ 
+    }
+    
+    .dark {
+      --color-bg: #111827; /* gray-900 */
+      --color-text: #e5e7eb; /* gray-200 */
+      --color-border: #374151; /* gray-700 */
+      --color-shadow: 0 4px 6px -1px rgba(219, 203, 203, 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5);
+    }
+  }
+
+@layer components {
+  .card {
+    @apply bg-[var(--color-bg)] text-[var(--color-text)] p-7 rounded-2xl 
+          shadow-[var(--color-shadow)]
+          border-[var(--color-border)] overflow-hidden 
+          transition-colors duration-300;
+  }
+  
+  .PieChart {
+    @apply bg-[var(--color-bg)] rounded-2xl shadow-[var(--color-shadow)]
+           border-[var(--color-border)] overflow-hidden 
+           transition-colors duration-300;
+  }
+}
+
+
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+
+.fixed.inset-0 {
+  background-color: rgba(0, 0, 0, 0.3);
+}
